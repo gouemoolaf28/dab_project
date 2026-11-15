@@ -21,7 +21,7 @@ targets:
     mode: development
     default: true
     workspace:
-      host: https://adb-7405609617633012.12.azuredatabricks.net
+      host: your-workspace-url # replace with your Workspace URL
     presets:
       artifacts_dynamic_version: true
 
@@ -30,27 +30,27 @@ targets:
     presets:
       name_prefix: '[testing] '
     workspace:
-      host: https://adb-7405618268925289.9.azuredatabricks.net/
+      host: your-workspace-url # replace with your Workspace URL
       # We explicitly deploy to /Workspace/Users/olafgouemo@gmail.com to make sure we only have a single copy.
       root_path: /Workspace/Shared/.bundle/${bundle.name}/${bundle.target}
     variables:
       catalog: citibike_test
     permissions:
-      - service_principal_name: 46d2eaba-cac8-4cf2-9869-4960b5d7cf2d
+      - service_principal_name: your-service-principal-name # update with your service principal name
         level: CAN_MANAGE
     run_as:
-      service_principal_name: 46d2eaba-cac8-4cf2-9869-4960b5d7cf2d
+      service_principal_name: your-service-principal-name # update with your service principal name
 
   prod:
     mode: production
     workspace:
-      host: https://adb-7405618331993854.14.azuredatabricks.net/
+      host: your-workspace-url # replace with your Workspace URL
       # We explicitly deploy to /Workspace/Users/olafgouemo@gmail.com to make sure we only have a single copy.
       root_path: /Workspace/Shared/.bundle/${bundle.name}/${bundle.target}
     variables:
       catalog: citibike_prod
     permissions:
-      - service_principal_name: c142914d-25bb-4629-95de-977acccac576
+      - service_principal_name: your-service-principal-name # update with your service principal name
         level: CAN_MANAGE
     run_as:
-      service_principal_name: c142914d-25bb-4629-95de-977acccac576        
+      service_principal_name: your-service-principal-name # update with your service principal name       
