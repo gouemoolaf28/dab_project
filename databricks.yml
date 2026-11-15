@@ -36,8 +36,10 @@ targets:
     variables:
       catalog: citibike_test
     permissions:
-      - user_name: olafgouemo@gmail.com
+      - service_principal_name: 46d2eaba-cac8-4cf2-9869-4960b5d7cf2d
         level: CAN_MANAGE
+    run_as:
+      service_principal_name: 46d2eaba-cac8-4cf2-9869-4960b5d7cf2d
 
   prod:
     mode: production
@@ -48,5 +50,7 @@ targets:
     variables:
       catalog: citibike_prod
     permissions:
-      - user_name: olafgouemo@gmail.com
+      - service_principal_name: c142914d-25bb-4629-95de-977acccac576
         level: CAN_MANAGE
+    run_as:
+      service_principal_name: c142914d-25bb-4629-95de-977acccac576        
